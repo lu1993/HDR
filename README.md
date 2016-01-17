@@ -1,6 +1,6 @@
 # handwritten-digits-recognition
 Data set:
-The files digits.RData contain the same training and test data of handwritten digit images for R. There are 10 digits classes. Each digit image x belongs to {0,1}^20*20 pixels in size and consists of binary values 0's and 1's only. There are 500 training images and 1000 test images per digit class. The whole training set is stored in a 10*500*20*20 array and the whole test set is stored in a 10*1000*20*20 array.
+The files digits.RData contain the same training and test data of handwritten digit images for R. There are 10 digits classes. Each digit image x \in to {0,1}^20\*20 pixels in size and consists of binary values 0's and 1's only. There are 500 training images and 1000 test images per digit class. The whole training set is stored in a 10*500*20*20 array and the whole test set is stored in a 10*1000*20*20 array.
 
 Goal:
 The goal of this project is to experiment with different classifiers for this data set. Two generative: (1) LDA (2) Mixture of products of Bernoulli's; Two discriminative (3) SVM: full solution and iterative solution (4) Logistic regression. For each classifier we will report the error rate on the test set. 
