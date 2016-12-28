@@ -1,7 +1,21 @@
 # **Handwritten Digits Recognition**
 ## **Objective**
 
-In this project, we want to compare the performance of variaous classification algotithms on handwritten digits recognition based on not only accuracy but also training and recognition time. 
+In this project, we want to compare the performance of variaous classification algotithms in handwritten digits recognition based on not only accuracy but also training and recognition time. 
+
+## **Challenge**
+
+1. Dimension reduction: There are 28*28 = 784 features (that is the number of pixel positions). We need to decide if we need dimension reduction to filter out noise and speed up computation. 
+
+2. Variance in class: The main challenge in handwritten digits recognition is that people don't write the same digits the same way, which makes the distribution assumption of class or finding boundary between classes not easy. 
+
+3. Initialization: Good initialization could save computation time.
+
+4. Computation speed: (1) We use stochastic gradient descent to compute optimal parameters. (2) There are 2 main modules in python provide methods for us to load and deal with large-scale data: Keras and Theano. Compared with keras, Theano allows us to store the dataset in shared variables and to just copy a minibatch everytime is need. This would lead to large increase in computation speed and decrease in memory usage. 
+
+5. Overfitting problem: We use cross-validatio to avoid overfitting.
+
+6. Evaluation: We use not only classification accuray rate (or error rate) but also rejection to evaluate model performance.
 
 
 ## **Data**
