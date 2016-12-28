@@ -13,7 +13,7 @@ In this project, we want to compare the performance of variaous classification a
 
 4. Computation speed: (1) We use stochastic gradient descent to compute optimal parameters. (2) There are 2 main modules in python provide methods for us to load and deal with large-scale data: Keras and Theano. Compared with keras, Theano allows us to store the dataset in shared variables and to just copy a minibatch everytime is need. This would lead to large increase in computation speed and decrease in memory usage. 
 
-5. Overfitting problem: We use cross-validatio to avoid overfitting.
+5. Overfitting problem: We use cross-validation to avoid overfitting.
 
 6. Evaluation: We use not only classification accuray rate (or error rate) but also rejection to evaluate model performance.
 
