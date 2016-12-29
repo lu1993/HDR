@@ -5,17 +5,43 @@ In this project, we want to compare the performance of variaous classification a
 
 ## **Challenge**
 
-1. Dimension reduction: There are 28*28 = 784 features (that is the number of pixel positions). We need to decide if we need dimension reduction to filter out noise and speed up computation. 
+The followings are challenges that we face and the solutions that we come up with. 
 
-2. Variance in class: The main challenge in handwritten digits recognition is that people don't write the same digits the same way, which makes the distribution assumption of class or finding boundary between classes not easy. 
+1. Dimension reduction: There are 28*28 = 784 features (that is the number of pixel positions). We need to decide if we need dimension reduction and what kind of dimension reduction techniques we should use to filter out noise and speed up computation. 
 
-3. Initialization: Good initialization could save computation time.
+Solution: We run algorithm under the following three conditions
 
-4. Computation speed: (1) We use stochastic gradient descent to compute optimal parameters. (2) There are 2 main modules in python provide methods for us to load and deal with large-scale data: Keras and Theano. Compared with keras, Theano allows us to store the dataset in shared variables and to just copy a minibatch everytime is need. This would lead to large increase in computation speed and decrease in memory usage. 
+(1) without dimension reduction
+
+(2) Use PCA to do dimension reduction
+
+(3) Summarize 784 features into N by keeping the N biggest singular values
+
+2. Variance in class: The main challenge in handwritten digits recognition is that people don't write the same digits the same way, which makes the distribution assumption of a class invalid or makes finding clear boundaries between classes difficult. 
+
+Solution: We use nested method and build classification model within a class. We compare the peformance between common method and nested method. 
+
+3. Initialization: Bad initialization could cost more computation time.
+
+Solution: We use three kinds of initializations:
+
+(1) random
+
+(2) class-based-parameter
+
+(3) KMeans-based-parameter
+
+4. Computation speed: Besides accuracy, computation speed also matters. 
+
+Solution: We try the following two approaches to increase speed:
+
+(1) We use stochastic gradient descent to compute optimal parameters. 
+
+(2) There are 2 main modules in python provide methods for us to load and deal with large-scale data: Keras and Theano. Compared with keras, Theano allows us to store the dataset in shared variables and to just copy a minibatch everytime is need. This would lead to large increase in computation speed and decrease in memory usage. 
 
 5. Overfitting problem: We use cross-validation to avoid overfitting.
 
-6. Evaluation: We use not only classification accuray rate (or error rate) but also rejection to evaluate model performance.
+6. Evaluation: We use not only classification accuray rate (or error rate) but also rejection to evaluate model performance. We use bootstrap to compute the rejection probability on the test set. Rejection rate is more statistically meaningful than raw error or accuracy rate. 
 
 
 ## **Data**
@@ -70,7 +96,7 @@ _The foundamental difference between generative and discriminative model is_:
 (7) Large convolutional neural network
 
 
-## **Optimization and Evaluation**
+## **Optimization**
 #### Parameters
 For all classifiers there will be a free parameter that needs to be adjusted using a holdout part of the training set. 
 
@@ -82,11 +108,5 @@ For all classifiers there will be a free parameter that needs to be adjusted usi
 
 For these methods, we run the algorithm B times on a random subset of training data per class, and evaluate the error on the remaining data for a value range of the free parameters. We choose the values that minimize the average error rate over the B runs and check the resulting algorithms on the test set.
 
-#### Cross-validatioan
 
-We use cross-validation to avoid overfitting. 
-
-#### BootStrap
-
-We use bootstrap to compute the rejection probability on the test set. Rejection rate is more statistically meaningful than raw error or accuracy rate. 
 
