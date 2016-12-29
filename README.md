@@ -71,9 +71,11 @@ Besides accuracy, computation speed also matters.
 ## **Model**
 #### Generative model 
 
-(1) LDA (Linear Discriminant analysis) 
+(1) Linear Discriminant analysis (LDA)
 
-(2) BMM (Bernoulli Mixture) and GMM (Gaussian Mixture Model) 
+LDA assumes a multivariate Gausssian distribution with equal variance and computes the log likelihood given each class to assign class.
+
+(2) Bernoulli Mixture (BMM) and Gaussian Mixture Model (GMM)
 
 - Linear discriminant analysis (LDA) assumes the same covariance matrix for every class
 
@@ -89,7 +91,9 @@ Besides accuracy, computation speed also matters.
 
 #### Discriminative model
 
-(3) SVM (Support vector machine) with or without kernels
+(3) SVM (Support vector machine) 
+
+SVM performs classification by separating classes with hyperplanes.
 
 (4) Logistic linear regression
 
