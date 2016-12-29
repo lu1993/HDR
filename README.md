@@ -3,6 +3,18 @@
 
 In this project, we want to compare the performance of variaous classification algotithms in handwritten digits recognition based on not only accuracy but also training and recognition time. 
 
+
+## **Data**
+#### 1. 'toy' dataset
+
+We reduce the MNIST dateset to a 'toy' dataset and use R programming to show the mathematical principles of the models and run them on the 'toy' dataset.
+
+The 'toy' dataset is store in files digits.RData. There are 5,000 images in the training set and 10,000 images in the test set with equal number of images for each class. Each image is a 20*20 pixel square. The pixel values are 0 or 1.The training set is stored in a 10\*500\*20\*20 array and the test set is stored in a 10\*1000\*20\*20 array.
+
+#### 2. MNIST dataset
+There are 600,000 images in the training set and 100,000 images in the test set. Each image is a 28*28 pixel square. The pixel values are gray scale between 0 and 255.  
+
+
 ## **Challenge**
 
 The followings are challenges that we face and the solutions that we come up with. 
@@ -53,18 +65,7 @@ Besides accuracy, computation speed also matters.
 #### 6. Evaluation
     Solution: We use not only classification accuray rate (or error rate) but also rejection to evaluate model performance. 
               We use bootstrap to compute the rejection probability on the test set. 
-              Rejection rate is more statistically meaningful than raw error or accuracy rate.
-
-
-## **Data**
-#### 1. 'toy' dataset
-
-We reduce the MNIST dateset to a 'toy' dataset and use R programming to show the mathematical principles of the models and run them on the 'toy' dataset.
-
-The 'toy' dataset is store in files digits.RData. There are 5,000 images in the training set and 10,000 images in the test set with equal number of images for each class. Each image is a 20*20 pixel square. The pixel values are 0 or 1.The training set is stored in a 10\*500\*20\*20 array and the test set is stored in a 10\*1000\*20\*20 array.
-
-#### 2. MNIST dataset
-There are 600,000 images in the training set and 100,000 images in the test set. Each image is a 28*28 pixel square. The pixel values are gray scale between 0 and 255.   
+              Rejection rate is more statistically meaningful than raw error or accuracy rate. 
 
 
 ## **Model**
@@ -177,11 +178,3 @@ For BMM and GMM (full covariance matrix) with kmeans-based-parameter initializat
 For simple neural network (SNN), convolutioanl neural network (CNN) and large convolutional neural network (LCNN), accuracy and time(in seconds) are reported.
 
 ![NN_profile.JPG]({{site.baseurl}}/NN_profile.JPG)
-
-
-
-
-
-
-
-
