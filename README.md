@@ -125,8 +125,7 @@ The network topology of a large convolutional neural network can be summarized a
 - Output layer.
 
 
-## **Optimization**
-#### Parameters
+## **Parameter Optimization**
 For all classifiers there will be a free parameter that needs to be adjusted using a holdout part of the training set. 
 
 (1) LDA: smoothing parameter for covariance matrix 
