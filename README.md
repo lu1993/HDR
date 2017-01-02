@@ -144,7 +144,7 @@ We run algorithms without dimension reduction and with random initial parameters
 
 (1) LDA: the optimal smoothing parameter is 0.1. The correction rate is 0.776 on training and 0.712 on test set. 
 
-(2) BMM: the optimal number of component is 3. The correction rate is 0.823 on training and 0.805 on test set. GMM: the optimal number of component is 3. The correction rate is 0.831 on training and 0.810 on test set. 
+(2) BMM: the optimal number of component is 3. The correction rate is 0.823 on training and 0.805 on test set.  
 
 (3) SVM: the optimal regularization parameter is 0.0015. The correction rate is 0.922 on training and 0.889 on test set. 
 
